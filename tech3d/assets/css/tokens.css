@@ -1,0 +1,65 @@
+/* 뷰티사랑넷 디자인 토큰 — 기존 사이트 색·폭에서 추출 (GEO/agents/07-screen-design.md) */
+@font-face {
+  font-family: "GmarketSans";
+  font-weight: 700;
+  font-display: swap;
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff") format("woff");
+}
+@font-face {
+  font-family: "GmarketSans";
+  font-weight: 500;
+  font-display: swap;
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff") format("woff");
+}
+
+:root {
+  /* 브랜드 */
+  --c-primary: #601986;
+  --c-primary-dark: #370f4e;
+  --c-primary-700: #411d77;
+  --c-primary-500: #6d3082;
+  --c-primary-50: #f6eefa;
+  --c-primary-100: #ecdcf4;
+  --c-accent: #da2664;
+  --c-accent-dark: #b90c48;
+  --c-teal: #00838f;          /* 원본 #00a9ba를 대비 4.5:1 이상으로 조정 */
+  --c-mint: #34dacc;
+  --c-navy: #32438c;
+  --c-naver: #03a94d;
+
+  /* 텍스트·면 */
+  --c-text: #222;
+  --c-text-body: #333;
+  --c-text-sub: #5f5f66;      /* 원본 #999 대체 (대비 확보) */
+  --c-line: #e3e0e8;
+  --c-bg: #fff;
+  --c-bg-soft: #f7f5fa;
+  --c-bg-gray: #f2f2f2;
+  --c-footer: #282828;
+  --c-footer-text: #c6c6c6;
+
+  /* 타이포 */
+  --font-body: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --font-display: "GmarketSans", var(--font-body);
+  --fs-12: .75rem;
+  --fs-14: .875rem;
+  --fs-16: 1rem;
+  --fs-18: 1.125rem;
+  --fs-22: 1.375rem;
+  --fs-28: clamp(1.4rem, 1.1rem + 1.2vw, 1.75rem);
+  --fs-36: clamp(1.7rem, 1.2rem + 2vw, 2.25rem);
+  --fs-44: clamp(2rem, 1.3rem + 2.8vw, 2.75rem);
+  --lh: 1.65;
+
+  /* 레이아웃 */
+  --w-max: 1254px;            /* 기존 사이트 콘텐츠 폭 유지 */
+  --w-narrow: 960px;          /* 기존 서브 본문 폭 */
+  --gutter: clamp(16px, 4vw, 32px);
+  --header-h: 78px;
+  --gnb-h: 48px;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow: 0 6px 24px rgba(55, 15, 78, .08);
+  --shadow-lg: 0 14px 40px rgba(55, 15, 78, .14);
+  --space-section: clamp(56px, 8vw, 104px);
+}

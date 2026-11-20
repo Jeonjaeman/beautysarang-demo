@@ -1,0 +1,149 @@
+/* 뷰티사랑넷 연출 레이어 (GEO/VISUAL-DIRECTION.md)
+   원칙: 본문은 연출 없이도 완성 상태로 보인다. 연출은 모두 덧붙이는 것이며,
+   JS가 없거나 '움직임 줄이기'가 켜져 있으면 정지된 최종 상태가 된다. */
+:root {
+  --ease-out: cubic-bezier(.22, 1, .36, 1);
+  --ease-spring: cubic-bezier(.34, 1.56, .64, 1);
+  --dur-fast: 200ms;
+  --dur-base: 550ms;
+  --dur-slow: 900ms;
+  --rise: 24px;
+}
+
+/* 페이지 이동 크로스페이드 (지원 브라우저만) */
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition { navigation: auto; }
+  ::view-transition-old(root), ::view-transition-new(root) { animation-duration: .28s; }
+}
+
+/* ===== 등장: motion.js가 화면 아래 요소에만 .rv를 붙인다 ===== */
+.rv { transform: translateY(var(--rise)); opacity: .4; }
+.rv.price-card { transform: perspective(900px) translateY(var(--rise)); }
+.rv.is-in {
+  transform: none; opacity: 1;
+  transition: transform var(--dur-base) var(--ease-out) var(--d, 0ms), opacity var(--dur-base) ease var(--d, 0ms);
+}
+
+/* ===== 버튼·칩·목록 마이크로 인터랙션 ===== */
+.btn { transition: background-color var(--dur-fast), color var(--dur-fast), transform var(--dur-fast) var(--ease-out), box-shadow var(--dur-fast); }
+.btn--accent { transform: translate(var(--tx, 0), var(--ty, 0)); box-shadow: 0 8px 22px rgba(218, 38, 100, .28); }
+.btn--accent:hover { box-shadow: 0 12px 30px rgba(218, 38, 100, .4); transform: translate(var(--tx, 0), calc(var(--ty, 0) - 1px)); }
+.btn:active { scale: .97; }
+.card__icon { transition: transform .35s var(--ease-spring); }
+.card:hover .card__icon { transform: rotate(-6deg) scale(1.1); }
+.related-links a { transition: background-color var(--dur-fast), transform var(--dur-fast) var(--ease-out); }
+.related-links a:hover { transform: translateY(-2px); }
+.board-list li { transition: background-color var(--dur-fast), padding var(--dur-fast) var(--ease-out); }
+.board-list li:hover { background: var(--c-primary-50); padding-left: 12px; padding-right: 12px; }
+
+/* ===== 요금 카드: 기울임 + 포인터를 따라가는 빛 ===== */
+.price-card {
+  position: relative; overflow: hidden;
+  transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition: transform .35s var(--ease-out), box-shadow .35s;
+}
+.price-card::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0; transition: opacity .3s;
+  background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 50%), rgba(218, 38, 100, .12), transparent 60%);
+}
+.price-card:hover { box-shadow: var(--shadow-lg); }
+.price-card:hover::after { opacity: 1; }
+
+/* ===== FAQ: 부드럽게 열림 ===== */
+.faq-item { transition: box-shadow .3s, padding .3s var(--ease-out), background-color .3s; }
+.faq-item[open] { box-shadow: inset 3px 0 0 var(--c-accent); padding-left: 16px; background: linear-gradient(90deg, var(--c-primary-50), transparent 60%); }
+.faq-item summary::after { transition: transform .3s var(--ease-out); }
+.faq-item[open] summary::after { content: "+"; transform: translateY(-50%) rotate(45deg); }
+@supports (interpolate-size: allow-keywords) {
+  :root { interpolate-size: allow-keywords; }
+  .faq-item::details-content { block-size: 0; overflow: clip; transition: block-size .4s var(--ease-out), content-visibility .4s allow-discrete; }
+  .faq-item[open]::details-content { block-size: auto; }
+}
+
+/* ===== 하단 CTA 띠: 흐르는 대형 문구 + 움직이는 그라데이션 ===== */
+.cta-band { position: relative; overflow: hidden; isolation: isolate; padding: 0 0 64px; background: var(--c-primary-dark); }
+.cta-band::before {
+  content: ""; position: absolute; inset: -40%; z-index: -1;
+  background:
+    radial-gradient(38% 42% at 22% 38%, rgba(218, 38, 100, .55), transparent 70%),
+    radial-gradient(34% 40% at 78% 30%, rgba(96, 25, 134, .95), transparent 70%),
+    radial-gradient(30% 36% at 62% 78%, rgba(52, 218, 204, .28), transparent 70%);
+  animation: mesh-drift 24s ease-in-out infinite alternate; animation-play-state: paused;
+}
+.cta-band.is-inview::before { animation-play-state: running; }
+.cta-marquee { overflow: hidden; padding: 36px 0 28px; user-select: none; }
+.cta-marquee__track {
+  display: flex; width: max-content; white-space: nowrap;
+  font-family: var(--font-display); font-weight: 700; font-size: clamp(3rem, 9vw, 7.5rem); line-height: 1.1;
+  color: transparent; -webkit-text-stroke: 1.5px rgba(255, 255, 255, .34);
+  animation: marquee 36s linear infinite; animation-play-state: paused;
+}
+.cta-marquee__track::before, .cta-marquee__track::after { content: attr(data-text); padding-right: .5em; }
+.cta-band.is-inview .cta-marquee__track { animation-play-state: running; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+@keyframes mesh-drift {
+  from { transform: translate3d(-4%, -3%, 0) rotate(0deg); }
+  to { transform: translate3d(5%, 4%, 0) rotate(8deg); }
+}
+
+/* ===== 스크롤 연동 (지원 브라우저만, 미지원이면 완성 상태 그대로) ===== */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    /* 정의문: 읽는 위치에 맞춰 문장이 진해진다 */
+    .definition .hl {
+      color: transparent; -webkit-background-clip: text; background-clip: text;
+      background-image: linear-gradient(var(--c-text), var(--c-text)), linear-gradient(#6a5578, #6a5578);
+      background-repeat: no-repeat; background-size: 0% 100%, 100% 100%;
+      animation: hl-sweep linear both; animation-timeline: view(); animation-range: entry 10% cover 32%;
+    }
+    @keyframes hl-sweep { to { background-size: 100% 100%, 100% 100%; } }
+
+    /* 단계: 연결선이 채워지고 번호가 켜진다 */
+    .steps { position: relative; }
+    .steps::before {
+      content: ""; position: absolute; left: 32px; top: 24px; bottom: 24px; width: 3px; border-radius: 3px;
+      background: var(--c-mint); transform-origin: top;
+      animation: grow-y linear both; animation-timeline: view(); animation-range: entry 40% cover 62%;
+    }
+    .steps li::before { animation: step-on linear both; animation-timeline: view(); animation-range: entry 60% cover 38%; }
+    @keyframes grow-y { from { transform: scaleY(0); } }
+    @keyframes step-on { from { background: var(--c-primary-500); transform: scale(.78); } }
+
+    /* 서브 히어로 사진: 스크롤하면 살짝 떠오른다 */
+    .page-hero__img { animation: hero-drift linear both; animation-timeline: scroll(root); animation-range: 0 520px; }
+    @keyframes hero-drift { to { transform: translateY(-22px) scale(1.03); } }
+
+    /* 프로그램 화면: 눕혀 있다가 펴진다 */
+    .screen-figure { perspective: 1400px; }
+    .screen-figure img {
+      transform-origin: 50% 100%;
+      animation: unfold linear both; animation-timeline: view(); animation-range: entry 0% cover 34%;
+    }
+    @keyframes unfold { from { transform: rotateX(16deg) scale(.93); } }
+  }
+}
+
+/* ===== 제목 단어 스윕 (빌드 때 h1 단어를 .w로 감싼다. 색만 바뀌므로 LCP·레이아웃 영향 없음) ===== */
+@media (prefers-reduced-motion: no-preference) {
+  h1 .w { animation: w-in .9s var(--ease-out) both; animation-delay: calc(var(--i) * 90ms + 80ms); }
+  .page-hero h1 .w { --w-from: rgba(255, 255, 255, .32); }
+  @keyframes w-in { from { color: var(--w-from, #cdb9d9); } }
+  .trial-badge {
+    background-image: linear-gradient(110deg, transparent 42%, rgba(255, 255, 255, .75) 50%, transparent 58%);
+    background-size: 260% 100%; background-position: 130% 0; background-repeat: no-repeat;
+    animation: shimmer 3.2s ease-in-out 1.2s 2;
+  }
+  @keyframes shimmer { to { background-position: -40% 0; } }
+}
+
+@media print {
+  .rv, .rv.price-card { opacity: 1 !important; transform: none !important; }
+}
+
+/* ===== 움직임 줄이기 ===== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition-duration: .01ms !important; }
+  .rv { transform: none; opacity: 1; }
+  .btn--accent { transform: none; }
+  .price-card { transform: none; }
+}

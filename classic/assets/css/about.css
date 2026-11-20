@@ -1,0 +1,14 @@
+/* 회사·고객센터 섹션 전용 스타일 (about, support) */
+.history { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--c-primary); }
+.history > li { display: grid; grid-template-columns: 110px 1fr; gap: 12px 24px; padding: 18px 4px; border-bottom: 1px solid var(--c-line); }
+.history > li > strong { color: var(--c-primary-dark); font-size: var(--fs-18); }
+.history ul { margin: 0; padding-left: 18px; }
+.history li li { padding: 2px 0; }
+@media (max-width: 640px) { .history > li { grid-template-columns: 1fr; gap: 6px; } }
+
+.info-list { display: grid; grid-template-columns: 140px 1fr; margin: 0; border-top: 2px solid var(--c-primary); }
+.info-list dt, .info-list dd { margin: 0; padding: 12px 8px; border-bottom: 1px solid var(--c-line); }
+.info-list dt { font-weight: 700; color: var(--c-primary-dark); }
+@media (max-width: 640px) { .info-list { grid-template-columns: 1fr; } .info-list dt { border-bottom: 0; padding-bottom: 0; } }
+
+.contact-card .card__big { display: block; margin: 8px 0; font-size: var(--fs-22); font-weight: 800; color: var(--c-primary-dark); }

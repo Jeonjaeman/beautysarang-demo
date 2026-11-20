@@ -1,0 +1,67 @@
+/* 업종 페이지(/industries/*) · 비교 페이지(/compare) 전용 */
+
+/* 히어로 보조 문구 */
+.page-hero .hero-price { margin: 12px 0 0; color: #f1e6f8; font-size: var(--fs-16); }
+.page-hero .hero-price strong { color: #fff; }
+.page-hero--split img { width: 100%; height: auto; }
+
+/* 업종 허브 카드 */
+.ind-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; margin: 0; padding: 0; list-style: none; }
+@media (max-width: 760px) { .ind-grid { grid-template-columns: 1fr; } }
+.ind-card {
+  position: relative; display: flex; flex-direction: column; padding: 28px; border-radius: var(--radius);
+  background: #fff; border: 1px solid var(--c-line); box-shadow: var(--shadow); transition: transform .15s, box-shadow .15s;
+}
+.ind-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+.ind-card h3 { font-size: var(--fs-22); margin: 0 0 .3em; }
+.ind-card h3 a { color: var(--c-primary-dark); text-decoration: none; }
+.ind-card h3 a::after { content: ""; position: absolute; inset: 0; border-radius: var(--radius); }
+.ind-card__alias { margin: 0 0 12px; color: var(--c-accent); font-weight: 700; font-size: var(--fs-14); }
+.ind-card ul { margin: 0 0 14px; padding-left: 1.1em; color: var(--c-text-sub); font-size: var(--fs-14); }
+.ind-card ul li + li { margin-top: 4px; }
+.ind-card .card__more { margin-top: auto; }
+
+/* 업종 고유 문제 목록 */
+.pain-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr)); gap: 16px; margin: 0; padding: 0; list-style: none; }
+.pain-list li { padding: 22px 22px 22px 24px; border-radius: var(--radius); background: #fff; border: 1px solid var(--c-line); border-top: 4px solid var(--c-accent); }
+.pain-list strong { display: block; margin-bottom: 6px; color: var(--c-primary-dark); font-size: var(--fs-18); }
+.pain-list p { margin: 0; color: var(--c-text-sub); font-size: var(--fs-14); }
+.pain-list .pain-fix { margin-top: 10px; color: var(--c-text-body); }
+.pain-list .pain-fix::before { content: "→ "; color: var(--c-primary); font-weight: 800; }
+
+/* 본문 단락 묶음 */
+.ind-body > * + * { margin-top: 1em; }
+.ind-body .table-wrap { margin-top: 24px; }
+.ind-note { margin-top: 16px; color: var(--c-text-sub); font-size: var(--fs-14); }
+
+/* 요금 요약 */
+.ind-price { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; padding: 28px 32px; border-radius: var(--radius); background: #fff; border: 2px solid var(--c-primary-100); }
+.ind-price p { margin: 0; }
+.ind-price__amount { font-family: var(--font-display); font-weight: 700; font-size: var(--fs-28); color: var(--c-primary-dark); }
+.ind-price__amount small { font-family: var(--font-body); font-size: var(--fs-16); color: var(--c-text-sub); }
+.ind-price__actions { display: flex; flex-wrap: wrap; gap: 10px; }
+
+/* 비교 페이지: 기준 체크리스트 */
+.criteria-list { counter-reset: crit; display: grid; gap: 16px; margin: 0; padding: 0; list-style: none; }
+.criteria-list > li { counter-increment: crit; position: relative; padding: 22px 24px 22px 76px; border-radius: var(--radius); background: #fff; border: 1px solid var(--c-line); }
+.criteria-list > li::before {
+  content: counter(crit); position: absolute; left: 22px; top: 20px; width: 38px; height: 38px; border-radius: 50%;
+  display: grid; place-items: center; background: var(--c-accent); color: #fff; font-weight: 800;
+}
+.criteria-list h3 { margin: 0 0 6px; font-size: var(--fs-18); color: var(--c-primary-dark); }
+.criteria-list p { margin: 0; color: var(--c-text-sub); }
+.criteria-list .criteria-ask { margin-top: 8px; color: var(--c-text-body); font-size: var(--fs-14); }
+.criteria-list .criteria-ask strong { color: var(--c-primary); }
+
+.check-list { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+.check-list li { position: relative; padding-left: 34px; }
+.check-list li::before {
+  content: ""; position: absolute; left: 0; top: .2em; width: 20px; height: 20px; border-radius: 5px;
+  border: 2px solid var(--c-primary);
+}
+
+/* 비교 페이지 히어로 사진 (세로 사진을 잘라 표시) */
+.page-hero--split .hero-photo { max-height: 440px; object-fit: cover; object-position: center 20%; }
+@media (max-width: 860px) { .page-hero--split .hero-photo { max-height: 280px; } }
+
+.ind-card__img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: var(--radius-sm); margin-bottom: 14px; }

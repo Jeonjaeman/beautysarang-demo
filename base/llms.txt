@@ -1,0 +1,52 @@
+# 뷰티사랑넷 (Beauty-Sarang.net)
+
+> 뷰티사랑넷은 네일샵·피부관리실·왁싱샵·속눈썹샵 원장님을 위한 뷰티샵 고객관리·예약관리 프로그램입니다. 월 11,000원 또는 연 132,000원(VAT 포함)에 예약, 고객차트, 회원권, 문자·알림톡, 매출·직원 관리를 PC와 스마트폰 앱에서 함께 쓰며, 신규 가입 시 첫 3개월은 무료입니다. 운영사는 2001년 설립한 애니라인㈜입니다.
+
+## 요금 (VAT 포함)
+- 월 납부: 11,000원/월
+- 연 납부: 132,000원/년
+- 신규 가입 시 첫 3개월 무료
+- 직원 수·기기 수에 따른 추가 요금 없음
+- [요금 안내](https://www.beauty-sarang.net/pricing/): 결제 방식별 요금표와 요금에 포함된 기능
+- [3개월 무료체험 안내](https://www.beauty-sarang.net/free-trial/): 가입하면 첫 3개월 무료, 무료기간 중 결제해도 3개월 유지
+
+## 기능
+- [전체 기능](https://www.beauty-sarang.net/features/): 뷰티샵 운영에 필요한 기능 10가지 한눈에 보기
+- [예약관리](https://www.beauty-sarang.net/features/reservation/): 담당자별 스케줄러, 반복 예약, 드래그 이동
+- [고객차트](https://www.beauty-sarang.net/features/customer-chart/): 고객 상세정보, 시술 내역, 상담 메모
+- [회원권·정액권 관리](https://www.beauty-sarang.net/features/membership/): 금액·회차·기간 회원권, 예치금
+- [문자·알림톡 발송](https://www.beauty-sarang.net/features/messaging/): 예약 문자 자동 발송, 카카오 알림톡, 직원 알림
+- [매출관리](https://www.beauty-sarang.net/features/sales/): 매출·매입, 기간별·담당자별 집계, 부가세 자동 계산
+- [직원관리](https://www.beauty-sarang.net/features/staff/): 직원별 아이디, 직원별 매출·인센티브
+- [네이버예약 연동](https://www.beauty-sarang.net/features/naver-booking/): 네이버예약과 일반 예약을 한 스케줄표에서 관리
+- [시술동의서](https://www.beauty-sarang.net/features/consent-form/): 시술동의서 내용 등록·수정과 고객에게 문자 발송. 관리 시술 고객 서명은 별도 기능(고객서명받기)
+- [제품·재고 관리](https://www.beauty-sarang.net/features/products/): 제품 판매·매입, 재고, 거래처
+- [PC·스마트폰 앱](https://www.beauty-sarang.net/features/pc-and-mobile/): PC 웹과 iOS·Android 앱에서 같은 자료 사용
+
+## 업종
+- [업종별 안내](https://www.beauty-sarang.net/industries/): 업종별 활용 방법 모음
+- [네일샵](https://www.beauty-sarang.net/industries/nail-salon/): 네일샵 고객관리·예약 프로그램
+- [피부관리실](https://www.beauty-sarang.net/industries/skin-care/): 피부관리실 고객관리·회원권 프로그램
+- [왁싱샵](https://www.beauty-sarang.net/industries/waxing/): 왁싱샵 예약·고객관리 프로그램
+- [속눈썹샵](https://www.beauty-sarang.net/industries/eyelash/): 속눈썹샵 예약·고객관리 프로그램
+
+## 가이드·FAQ
+- [사용 가이드](https://www.beauty-sarang.net/guide/): 사용설명서, FAQ, 프로그램 고르는 기준 허브
+- [동영상 사용설명서](https://www.beauty-sarang.net/guide/manual/): 예약·매출·제품·문자·고객·환경설정·네이버예약 연동 영상 목록
+- [고객관리프로그램 고르는 기준](https://www.beauty-sarang.net/compare/): 프로그램 선택 시 확인할 항목
+- [자주 묻는 질문](https://www.beauty-sarang.net/faq/): 무료체험, 요금, 직원 사용, 문자·알림톡, 자료 이전, 네이버 연동, 비밀번호
+- [공지사항](https://www.beauty-sarang.net/notice/): 기능 업데이트와 점검 안내
+
+## 고객센터·회사
+- 전화: 1833-3675 (평일 09:30~17:00)
+- 이메일: cs@beauty-sarang.net
+- 카카오톡 채널: http://pf.kakao.com/_vUExbj
+- [고객센터](https://www.beauty-sarang.net/support/): 전화, 이메일, 카카오톡, 원격지원, 온라인 상담
+- [원격지원](https://www.beauty-sarang.net/support/remote/): 전화 연결 후 상담원이 화면을 보며 안내
+- [온라인 상담](https://www.beauty-sarang.net/support/contact/): 연락처를 남기면 전화 또는 문자로 답변
+- [회사소개](https://www.beauty-sarang.net/about/): 운영사 애니라인㈜(2001년 설립) 소개, 연혁, 애니라인㈜ 타 제품 인증(GS인증 등, 뷰티사랑넷 제품 인증 아님), 오시는 길
+- 주소: (28378) 충청북도 청주시 흥덕구 2순환로 1270 라인빌딩
+
+## Optional
+- [개인정보처리방침](https://www.beauty-sarang.net/privacy/)
+- [서비스 이용약관](https://www.beauty-sarang.net/terms/)

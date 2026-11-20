@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="ko" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>회원권·정액권 관리 프로그램 | 금액·회차·기간권 - 뷰티사랑넷</title>
+<meta name="description" content="회원권·정액권 관리 프로그램 뷰티사랑넷. 금액·회차·기간 회원권을 등록해 판매하고 잔액·남은 횟수 차감, 유효기간 연장, 회차권 환불, 잔여회원권 집계까지. 첫 3개월 무료.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://www.beauty-sarang.net/features/membership/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="뷰티사랑넷">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="회원권·정액권 관리 프로그램 | 금액·회차·기간권 - 뷰티사랑넷">
+<meta property="og:description" content="회원권·정액권 관리 프로그램 뷰티사랑넷. 금액·회차·기간 회원권을 등록해 판매하고 잔액·남은 횟수 차감, 유효기간 연장, 회차권 환불, 잔여회원권 집계까지. 첫 3개월 무료.">
+<meta property="og:url" content="https://www.beauty-sarang.net/features/membership/">
+<meta property="og:image" content="https://www.beauty-sarang.net/assets/img/og-default.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#601986">
+<link rel="icon" href="/beautysarang-demo/campaign/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/beautysarang-demo/campaign/assets/css/tokens.css">
+<link rel="stylesheet" href="/beautysarang-demo/campaign/assets/css/base.css">
+<link rel="stylesheet" href="/beautysarang-demo/campaign/assets/css/components.css">
+<link rel="stylesheet" href="/beautysarang-demo/campaign/assets/css/features.css"><link rel="stylesheet" href="/beautysarang-demo/campaign/assets/css/campaign.css">
+<script>(function(h){h.classList.add("js");if(window.matchMedia&&!matchMedia("(prefers-reduced-motion: reduce)").matches){h.classList.add("cp-motion");window.__cpT=setTimeout(function(){h.classList.remove("cp-motion")},4000)}})(document.documentElement)</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://www.beauty-sarang.net/#organization",
+   "name": "애니라인㈜",
+   "legalName": "애니라인 주식회사",
+   "alternateName": "Anyline",
+   "brand": {
+    "@type": "Brand",
+    "name": "뷰티사랑넷"
+   },
+   "url": "https://www.beauty-sarang.net/",
+   "logo": {
+    "@type": "ImageObject",
+    "url": "https://www.beauty-sarang.net/assets/img/logo.svg"
+   },
+   "foundingDate": "2001",
+   "telephone": "+82-1833-3675",
+   "email": "cs@beauty-sarang.net",
+   "taxID": "301-81-56575",
+   "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "흥덕구 2순환로 1270 라인빌딩",
+    "addressLocality": "청주시",
+    "addressRegion": "충청북도",
+    "postalCode": "28378",
+    "addressCountry": "KR"
+   },
+   "contactPoint": [
+    {
+     "@type": "ContactPoint",
+     "telephone": "+82-1833-3675",
+     "contactType": "customer support",
+     "areaServed": "KR",
+     "availableLanguage": "ko",
+     "hoursAvailable": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+       "Monday",
+       "Tuesday",
+       "Wednesday",
+       "Thursday",
+       "Friday"
+      ],
+      "opens": "09:30",
+      "closes": "17:00"
+     }
+    }
+   ],
+   "sameAs": [
+    "https://blog.naver.com/beautysarangnet",
+    "https://www.instagram.com/beauty_sarangnet/",
+    "https://www.facebook.com/beautysarangnet",
+    "http://pf.kakao.com/_vUExbj",
+    "https://play.google.com/store/apps/details?id=kr.co.anyline.beautySarang_V3",
+    "https://apps.apple.com/kr/app/id1433304277"
+   ]
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://www.beauty-sarang.net/#website",
+   "url": "https://www.beauty-sarang.net/",
+   "name": "뷰티사랑넷",
+   "inLanguage": "ko-KR",
+   "publisher": {
+    "@id": "https://www.beauty-sarang.net/#organization"
+   }
+  },
+  {
+   "@type": "SoftwareApplication",
+   "@id": "https://www.beauty-sarang.net/#software",
+   "name": "뷰티사랑넷",
+   "applicationCategory": "BusinessApplication",
+   "applicationSubCategory": "뷰티샵 고객관리프로그램",
+   "operatingSystem": "Web, Android, iOS",
+   "url": "https://www.beauty-sarang.net/",
+   "description": "네일샵·피부관리실·왁싱샵·속눈썹샵 등 뷰티샵의 예약, 고객차트, 회원권, 문자, 매출, 직원을 PC와 스마트폰에서 관리하는 고객관리프로그램.",
+   "publisher": {
+    "@id": "https://www.beauty-sarang.net/#organization"
+   },
+   "offers": [
+    {
+     "@type": "Offer",
+     "name": "월 납부",
+     "price": "11000",
+     "priceCurrency": "KRW",
+     "priceSpecification": {
+      "@type": "UnitPriceSpecification",
+      "price": "11000",
+      "priceCurrency": "KRW",
+      "valueAddedTaxIncluded": true,
+      "billingDuration": "P1M",
+      "unitCode": "MON"
+     },
+     "description": "신규 가입 시 첫 3개월 무료, 이후 월 11,000원(VAT 포함)"
+    },
+    {
+     "@type": "Offer",
+     "name": "연 납부",
+     "price": "132000",
+     "priceCurrency": "KRW",
+     "priceSpecification": {
+      "@type": "UnitPriceSpecification",
+      "price": "132000",
+      "priceCurrency": "KRW",
+      "valueAddedTaxIncluded": true,
+      "billingDuration": "P1Y",
+      "unitCode": "ANN"
+     },
+     "description": "연 132,000원(VAT 포함), 1년 한 번 결제"
+    }
+   ]
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://www.beauty-sarang.net/features/membership/#webpage",
+   "url": "https://www.beauty-sarang.net/features/membership/",
+   "name": "회원권·정액권 관리 프로그램 | 금액·회차·기간권 - 뷰티사랑넷",
+   "description": "회원권·정액권 관리 프로그램 뷰티사랑넷. 금액·회차·기간 회원권을 등록해 판매하고 잔액·남은 횟수 차감, 유효기간 연장, 회차권 환불, 잔여회원권 집계까지. 첫 3개월 무료.",
+   "inLanguage": "ko-KR",
+   "isPartOf": {
+    "@id": "https://www.beauty-sarang.net/#website"
+   },
+   "about": {
+    "@id": "https://www.beauty-sarang.net/#software"
+   },
+   "dateModified": "2026-11-18",
+   "breadcrumb": {
+    "@id": "https://www.beauty-sarang.net/features/membership/#breadcrumb"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://www.beauty-sarang.net/features/membership/#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "홈",
+     "item": "https://www.beauty-sarang.net/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "기능",
+     "item": "https://www.beauty-sarang.net/features/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "회원권·정액권 관리",
+     "item": "https://www.beauty-sarang.net/features/membership/"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://www.beauty-sarang.net/features/membership/#faq",
+   "isPartOf": {
+    "@id": "https://www.beauty-sarang.net/features/membership/#webpage"
+   },
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "어떤 종류의 회원권을 만들 수 있나요?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "금액회원권, 회차회원권, 기간회원권 3가지입니다. 금액회원권은 일정 금액을 미리 적립해 쓰는 회원권(흔히 말하는 정액권), 회차회원권은 정해진 횟수만큼 쓰는 회원권, 기간회원권은 정해진 기간 동안 쓰는 회원권입니다."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "회원권을 판매하면 추가 적립금이 자동으로 들어가나요?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "네. 금액회원권을 등록할 때 결제 금액과 추가 적립 금액을 정해 두면, 판매할 때 그 회원권을 고르는 것만으로 추가 적립금이 자동 입력됩니다."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "회차회원권을 환불할 수 있나요?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "네. 매출매입 메뉴에서 회차회원권 환불을 처리할 수 있습니다. 처리 방법은 동영상 사용설명서의 [회차회원권 환불하기]에서 볼 수 있습니다."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "금액회원권 유효기간을 연장할 수 있나요?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "네. 금액회원권의 유효기간을 연장할 수 있고, 회원권 등록 때 유효기간을 두지 않을 수도 있습니다."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "한 회원권을 다른 고객과 같이 쓸 수 있나요?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "네. 금액회원권 공유 기능으로 한 고객의 금액회원권을 다른 고객과 함께 쓸 수 있습니다."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body class="theme-campaign" data-base="/beautysarang-demo/campaign">
+<a class="skip-link" href="#main">본문 바로가기</a>
+<div class="demo-bar"><a href="https://jeonjaeman.github.io/beautysarang-demo/">← 데모 목록</a><span>데모 <strong>B 캠페인</strong> · 내부 검토용 · 검색 색인 제외</span></div>
+<header class="site-header cp-header">
+  <div class="header-top container">
+    <a class="brand" href="/beautysarang-demo/campaign/" aria-label="뷰티사랑넷 홈">
+      <img src="/beautysarang-demo/campaign/assets/img/logo.svg" alt="뷰티사랑넷" width="168" height="44">
+    </a>
+    <p class="tagline">네일<span class="nobr">샵·</span><wbr>피부관리<span class="nobr">실·</span><wbr>왁싱<span class="nobr">샵·</span><wbr>속눈썹샵 고객관리프로그램</p>
+
+    <nav class="gnb" id="gnb" aria-label="주 메뉴">
+      <ul class="gnb__list">
+        <li class="gnb__item has-sub">
+          <a class="gnb__link" href="/beautysarang-demo/campaign/features/">기능</a>
+          <button class="gnb__sub-toggle" type="button" aria-expanded="false"><span class="visually-hidden">기능 하위 메뉴</span></button>
+          <ul class="gnb__sub">
+            <li><a href="/beautysarang-demo/campaign/features/reservation/">예약관리</a></li>
+            <li><a href="/beautysarang-demo/campaign/features/customer-chart/">고객차트</a></li>
+            <li><a href="/beautysarang-demo/campaign/features/membership/">회원<span class="nobr">권·</span><wbr>정액권</a></li>
+            <li><a href="/beautysarang-demo/campaign/features/messaging/">문<span class="nobr">자·</span><wbr>알림톡</a></li>
+            <li><a href="/beautysarang-demo/campaign/features/sales/">매출관리</a></li>
+            <li><a href="/beautysarang-demo/campaign/features/staff/">직원관리</a></li>
+            <li><a href="/beautysarang-demo/campaign/features/naver-booking/">네이버예약 연동</a></li>
+            <li><a href="/beautysarang-demo/campaign/features/consent-form/">시술동의<span class="nobr">서·</span><wbr>서명</a></li>
+            <li><a href="/beautysarang-demo/campaign/features/products/">제<span class="nobr">품·</span><wbr>재고</a></li>
+            <li><a href="/beautysarang-demo/campaign/features/pc-and-mobile/">P<span class="nobr">C·</span><wbr>모바일 앱</a></li>
+          </ul>
+        </li>
+        <li class="gnb__item has-sub">
+          <a class="gnb__link" href="/beautysarang-demo/campaign/industries/">업종별</a>
+          <button class="gnb__sub-toggle" type="button" aria-expanded="false"><span class="visually-hidden">업종별 하위 메뉴</span></button>
+          <ul class="gnb__sub">
+            <li><a href="/beautysarang-demo/campaign/industries/nail-salon/">네일샵</a></li>
+            <li><a href="/beautysarang-demo/campaign/industries/skin-care/">피부관리<span class="nobr">실·</span><wbr>에스테틱</a></li>
+            <li><a href="/beautysarang-demo/campaign/industries/waxing/">왁싱샵</a></li>
+            <li><a href="/beautysarang-demo/campaign/industries/eyelash/">속눈썹샵</a></li>
+          </ul>
+        </li>
+        <li class="gnb__item"><a class="gnb__link" href="/beautysarang-demo/campaign/pricing/">요금</a></li>
+        <li class="gnb__item has-sub">
+          <a class="gnb__link" href="/beautysarang-demo/campaign/guide/">가이드</a>
+          <button class="gnb__sub-toggle" type="button" aria-expanded="false"><span class="visually-hidden">가이드 하위 메뉴</span></button>
+          <ul class="gnb__sub">
+            <li><a href="/beautysarang-demo/campaign/guide/manual/">사용설명서</a></li>
+            <li><a href="/beautysarang-demo/campaign/compare/">프로그램 고르는 기준</a></li>
+            <li><a href="/beautysarang-demo/campaign/faq/">자주 묻는 질문</a></li>
+          </ul>
+        </li>
+        <li class="gnb__item has-sub">
+          <a class="gnb__link" href="/beautysarang-demo/campaign/support/">고객센터</a>
+          <button class="gnb__sub-toggle" type="button" aria-expanded="false"><span class="visually-hidden">고객센터 하위 메뉴</span></button>
+          <ul class="gnb__sub">
+            <li><a href="/beautysarang-demo/campaign/support/">전<span class="nobr">화·</span><wbr>카카오 상담</a></li>
+            <li><a href="/beautysarang-demo/campaign/support/remote/">원격지원</a></li>
+            <li><a href="/beautysarang-demo/campaign/support/contact/">온라인 상담</a></li>
+            <li><a href="/beautysarang-demo/campaign/notice/">공지사항</a></li>
+          </ul>
+        </li>
+        <li class="gnb__item"><a class="gnb__link" href="/beautysarang-demo/campaign/about/">회사소개</a></li>
+      </ul>
+      <div class="gnb__mobile-cta">
+        <a class="btn btn--primary" href="/beautysarang-demo/campaign/free-trial/">3개월 무료로 시작하기</a>
+        <a class="btn btn--ghost" href="https://crm.beauty-sarang.net/">프로그램 로그인</a>
+        <a class="btn btn--ghost" href="tel:1833-3675">전화 상담 1833-3675</a>
+      </div>
+    </nav>
+
+    <div class="header-util">
+      <ul class="remote-links" aria-label="원격지원">
+        <li><a href="http://helpu.kr/anyline1/" rel="noopener" target="_blank">원격 1</a></li>
+        <li><a href="http://helpu.kr/anyline2/" rel="noopener" target="_blank">원격 2</a></li>
+        <li><a href="http://helpu.kr/anyline3/" rel="noopener" target="_blank">원격 3</a></li>
+      </ul>
+      <a class="cp-login" href="https://crm.beauty-sarang.net/">프로그램 로그인</a>
+      <a class="btn btn--primary btn--sm" href="/beautysarang-demo/campaign/free-trial/">3개월 무료로 시작하기</a>
+    </div>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="gnb">
+      <span class="nav-toggle__bar" aria-hidden="true"></span>
+      <span class="visually-hidden">메뉴 열기</span>
+    </button>
+  </div>
+</header>
+
+<nav class="breadcrumb" aria-label="현재 위치"><div class="container"><ol><li><a href="/beautysarang-demo/campaign/">홈</a></li><li><a href="/beautysarang-demo/campaign/features/">기능</a></li><li aria-current="page">회원<span class="nobr">권·</span><wbr>정액권 관리</li></ol></div></nav>
+<main id="main">
+<section class="page-hero page-hero--split">
+  <div class="container">
+    <div>
+    <h1 aria-label="회원권·정액권 관리 프로그램, 금액·회차·기간 회원권을 한 번에"><span class="w" style="--i:0">회원<span class="nobr">권·</span><wbr>정액권</span> <span class="w" style="--i:1">관리</span> <span class="w" style="--i:2">프로그램,</span> <span class="w" style="--i:3">금<span class="nobr">액·</span><wbr>회<span class="nobr">차·</span><wbr>기간</span> <span class="w" style="--i:4">회원권을</span> <span class="w" style="--i:5">한</span> <span class="w" style="--i:6">번에</span></h1>
+    <p class="lead"><span class="nobr">정액권(금액회원권),</span> 회차권, 기간권을 등록해 두고 판<span class="nobr">매·</span><wbr>결제할 때마다 잔액과 남은 횟수가 자동으로 바뀝니다. 고객이 물어보면 바로 답할 수 있습니다.</p>
+    <div class="hero-actions">
+      <a class="btn btn--accent btn--lg" href="/beautysarang-demo/campaign/free-trial/">3개월 무료로 시작하기</a>
+    </div>
+    </div>
+    <img class="page-hero__img" src="/beautysarang-demo/campaign/assets/img/feature-membership-1200.webp" srcset="/beautysarang-demo/campaign/assets/img/feature-membership-640.webp 640w, /beautysarang-demo/campaign/assets/img/feature-membership-1200.webp 1200w" sizes="(max-width: 860px) 100vw, 520px" alt="" width="1200" height="821" fetchpriority="high">
+  </div>
+</section>
+
+<section class="section feature-intro" aria-labelledby="def-title">
+  <div class="container container--narrow">
+    <h2 id="def-title" class="visually-hidden">회원권 관리 기능 정의</h2>
+    <p class="definition"><span class="hl">뷰티사랑넷 회원권 관리는 금<span class="nobr">액·</span><wbr>회<span class="nobr">차·</span><wbr>기간 회원권의 등<span class="nobr">록·</span><wbr>판<span class="nobr">매·</span><wbr>차<span class="nobr">감·</span><wbr>잔액을 자동으로 관리하는 정액권 관리 프로그램입니다.</span></p>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="fit-title">
+  <div class="container">
+    <div class="section-head">
+      <h2 id="fit-title" class="section-title">이런 샵에 필요해요</h2>
+    </div>
+    <ul class="check-list">
+      <li>정액<span class="nobr">권·</span><wbr>회차권 잔액을 수기나 엑셀로 계산하다 실수가 생기는 샵</li>
+      <li>충전 금액에 따라 추가 적립을 다르게 주는 샵</li>
+      <li>관리 코스를 10회권, 5회권처럼 횟수로 파는 샵</li>
+      <li>남은 회원권 총액을 한눈에 파악하고 싶은 샵</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section section--soft" aria-labelledby="types-title">
+  <div class="container">
+    <div class="section-head">
+      <h2 id="types-title" class="section-title">회원권 3가지 비교</h2>
+    </div>
+    <div class="table-wrap">
+      <table class="data-table">
+        <caption>뷰티사랑넷 회원권 종류별 등록 항목</caption>
+        <thead>
+          <tr><th scope="col">구분</th><th scope="col">금액회원권</th><th scope="col">회차회원권</th><th scope="col">기간회원권</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">쓰는 방식</th><td>일정 금액을 미리 적립해 사용</td><td>정해진 횟수만큼 사용</td><td>정해진 기간 동안 사용</td></tr>
+          <!-- 확인 필요: 회차회원권 등록 항목(이름·금액·횟수)은 원문에 명시되지 않음 -->
+          <tr><th scope="row">등록할 때 정하는 것</th><td>회원권 이름, 결제 금액, 추가 적립 금액, 유효기간</td><td>회원권 이름, 금액, 횟수</td><td>회원권 이름, 할인 또는 적립율, 기간, 금액</td></tr>
+          <tr><th scope="row">관련 자동문자</th><td>판매 시, 기간만료 <span class="nobr">전·</span><wbr>후</td><td>판매 시, 기간만료 <span class="nobr">전·</span><wbr>후, 잔여회수 안내</td><td>판매 시, 기간만료 후</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="list-title">
+  <div class="container">
+    <div class="section-head">
+      <h2 id="list-title" class="section-title">회원권 관리 주요 기능</h2>
+    </div>
+    <dl class="feature-list">
+      <div><dt>회원권 등록</dt><dd>환경설정의 회원권설정에서 샵에서 파는 금<span class="nobr">액·</span><wbr>회<span class="nobr">차·</span><wbr>기간 회원권을 미리 등록합니다.</dd></div>
+      <div><dt>고객 정보 창에서 판매</dt><dd>고객을 열고 회원권을 고른 뒤 결제 <span class="nobr">방법(현금·카드·계좌이체·미수금)을</span> 선택해 판매합니다.</dd></div>
+      <div><dt>추가 적립 자동 입력</dt><dd>금액회원권을 고르면 등록할 때 정한 추가 적립금이 자동으로 들어갑니다.</dd></div>
+      <div><dt>예약창에서 차감 결제</dt><dd>시술 후 예약 창에서 금액회원권이나 회차회원권으로 결제하면 잔액과 남은 횟수가 차감됩니다.</dd></div>
+      <div><dt>유효기간 연장</dt><dd>금액회원권의 유효기간을 연장합니다.</dd></div>
+      <div><dt>회차회원권 환불</dt><dd>매출매입 메뉴에서 회차회원권 환불을 처리합니다.</dd></div>
+      <div><dt>금액회원권 공유</dt><dd>한 고객의 금액회원권을 다른 고객과 함께 씁니다.</dd></div>
+      <div><dt>잔여회원권 집계</dt><dd>고객들에게 남아 있는 회원권을 집계 메뉴에서 모아 봅니다.</dd></div>
+      <div><dt>예치금과 함께 사용</dt><dd>2022년 2월 업데이트로 예치금과 금액권을 함께 쓸 수 있는 범위가 넓어졌습니다.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="section section--soft" aria-labelledby="steps-title">
+  <div class="container container--narrow">
+    <h2 id="steps-title" class="section-title">회원권을 판매하는 순서</h2>
+    <ol class="steps">
+      <li><strong>회원권 등록</strong> — 환경설정 &gt; 회원권설정에서 [회원권 등록<span class="nobr">]을</span> 눌러 이름, 결제 금액, 추가 적립, 유효기간을 정합니다.</li>
+      <li><strong>고객 열기</strong> — 고객 메뉴에서 고객의 [관리하기<span class="nobr">]를</span> 눌러 고객 정보 창을 엽니다.</li>
+      <li><strong>회원권 선택</strong> — 금액회원<span class="nobr">권·</span><wbr>회차회원<span class="nobr">권·</span><wbr>기간회원권 탭에서 [판매하기<span class="nobr">]를</span> 누르고 판매할 회원권을 고릅니다.</li>
+      <li><strong>결제</strong> — 결제 방법을 고르고 등록하면 고객의 보유 회원권에 바로 반영됩니다.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="screen-title">
+  <div class="container">
+    <h2 id="screen-title" class="section-title">회원권 설정 화면</h2>
+    <figure class="screen-figure">
+      <img src="/beautysarang-demo/campaign/assets/img/screens/membership-settings.webp" alt="금액회원권 목록과 결제금액·추가적립·유효기간 열, 오른쪽 회원권 등록 창이 보이는 회원권 설정 화면" width="1160" height="590" loading="lazy">
+      <figcaption>회원권설정. 금<span class="nobr">액·</span><wbr>회<span class="nobr">차·</span><wbr>기간 회원권 탭에서 회원권을 등록하고 결제 금액과 추가 적립, 유효기간을 정합니다.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section section--soft" aria-labelledby="links-title">
+  <div class="container">
+    <h2 id="links-title" class="section-title">함께 보면 좋은 페이지</h2>
+    <div class="link-group">
+      <h3>업종별 회원권 활용</h3>
+      <ul class="related-links">
+        <li><a href="/beautysarang-demo/campaign/industries/skin-care/">피부관리실 고객관리프로그램</a></li>
+        <li><a href="/beautysarang-demo/campaign/industries/nail-salon/">네일샵 고객관리프로그램</a></li>
+        <li><a href="/beautysarang-demo/campaign/industries/waxing/">왁싱샵 고객관리프로그램</a></li>
+      </ul>
+    </div>
+    <div class="link-group">
+      <h3>관련 기능</h3>
+      <ul class="related-links">
+        <li><a href="/beautysarang-demo/campaign/features/customer-chart/">고객차<span class="nobr">트·</span><wbr>고객관리카드 기능</a></li>
+        <li><a href="/beautysarang-demo/campaign/features/sales/">뷰티샵 매출관리 기능</a></li>
+        <li><a href="/beautysarang-demo/campaign/features/messaging/">회원권 만료 안내 문자 자동발송</a></li>
+      </ul>
+    </div>
+    <p class="section-more"><a href="/beautysarang-demo/campaign/features/">뷰티샵 관리 프로그램 기능 전체 보기</a></p>
+  </div>
+</section>
+
+<section class="section faq" aria-labelledby="faq-title"><div class="container container--narrow"><h2 id="faq-title" class="section-title">자주 묻는 질문</h2><details class="faq-item"><summary><span class="faq-q">어떤 종류의 회원권을 만들 수 있나요?</span></summary><div class="faq-answer"><p>금액회원권, 회차회원권, 기간회원권 3가지입니다. 금액회원권은 일정 금액을 미리 적립해 쓰는 <span class="nobr">회원권(흔히 말하는 정액권),</span> 회차회원권은 정해진 횟수만큼 쓰는 회원권, 기간회원권은 정해진 기간 동안 쓰는 회원권입니다.</p></div></details><details class="faq-item"><summary><span class="faq-q">회원권을 판매하면 추가 적립금이 자동으로 들어가나요?</span></summary><div class="faq-answer"><p>네. 금액회원권을 등록할 때 결제 금액과 추가 적립 금액을 정해 두면, 판매할 때 그 회원권을 고르는 것만으로 추가 적립금이 자동 입력됩니다.</p></div></details><details class="faq-item"><summary><span class="faq-q">회차회원권을 환불할 수 있나요?</span></summary><div class="faq-answer"><p>네. 매출매입 메뉴에서 회차회원권 환불을 처리할 수 있습니다. 처리 방법은 동영상 사용설명서의 [회차회원권 환불하기<span class="nobr">]에서</span> 볼 수 있습니다.</p></div></details><details class="faq-item"><summary><span class="faq-q">금액회원권 유효기간을 연장할 수 있나요?</span></summary><div class="faq-answer"><p>네. 금액회원권의 유효기간을 연장할 수 있고, 회원권 등록 때 유효기간을 두지 않을 수도 있습니다.</p></div></details><details class="faq-item"><summary><span class="faq-q">한 회원권을 다른 고객과 같이 쓸 수 있나요?</span></summary><div class="faq-answer"><p>네. 금액회원권 공유 기능으로 한 고객의 금액회원권을 다른 고객과 함께 쓸 수 있습니다.</p></div></details></div></section>
+</main>
+<aside class="cta-band" aria-labelledby="cta-band-title">
+  <div class="cp-cta__deco" aria-hidden="true">
+    <svg class="cp-cta__dots" viewBox="0 0 240 240" width="240" height="240"><defs><pattern id="cpCtaDots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="3.2" fill="currentColor"/></pattern></defs><circle cx="120" cy="120" r="120" fill="url(#cpCtaDots)"/></svg>
+    <svg class="cp-cta__capsule" viewBox="0 0 300 120" width="300" height="120"><rect x="3" y="3" width="294" height="114" rx="57" fill="none" stroke="currentColor" stroke-width="4"/></svg>
+  </div>
+  <div class="container cta-band__inner">
+    <p class="cta-band__eyebrow">신규 가입 혜택</p>
+    <h2 id="cta-band-title" class="cta-band__title">첫 3개월은<br> 무료로 써보세요</h2>
+    <p class="cta-band__desc">이후 월 11,000원 또는 연 <span class="nobr">132,000원(VAT 포함).</span> 직원이 늘어도, 스마트폰을 함께 써도 요금은 같습니다.</p>
+    <div class="cta-band__actions">
+      <a class="btn btn--white btn--lg" href="/beautysarang-demo/campaign/free-trial/">3개월 무료로 시작하기</a>
+      <a class="btn btn--white-line btn--lg" href="tel:1833-3675">전화 상담 1833-3675</a>
+    </div>
+  </div>
+</aside>
+
+<footer class="site-footer">
+  <div class="container">
+    <nav class="footer-nav" aria-label="사이트맵">
+      <div>
+        <h2 class="footer-nav__title">서비스</h2>
+        <ul>
+          <li><a href="/beautysarang-demo/campaign/features/">전체 기능</a></li>
+          <li><a href="/beautysarang-demo/campaign/pricing/">요금</a></li>
+          <li><a href="/beautysarang-demo/campaign/free-trial/">3개월 무료체험</a></li>
+          <li><a href="/beautysarang-demo/campaign/compare/">고객관리프로그램 고르는 기준</a></li>
+          <li><a href="/beautysarang-demo/campaign/features/pc-and-mobile/">P<span class="nobr">C·</span><wbr>모바일 앱</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="footer-nav__title">업종별</h2>
+        <ul>
+          <li><a href="/beautysarang-demo/campaign/industries/nail-salon/">네일샵 고객관리프로그램</a></li>
+          <li><a href="/beautysarang-demo/campaign/industries/skin-care/">피부관리실 고객관리프로그램</a></li>
+          <li><a href="/beautysarang-demo/campaign/industries/waxing/">왁싱샵 고객관리프로그램</a></li>
+          <li><a href="/beautysarang-demo/campaign/industries/eyelash/">속눈썹샵 고객관리프로그램</a></li>
+          <li><a href="/beautysarang-demo/campaign/industries/">업종별 전체 보기</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="footer-nav__title">가이드</h2>
+        <ul>
+          <li><a href="/beautysarang-demo/campaign/guide/manual/">사용설명서</a></li>
+          <li><a href="/beautysarang-demo/campaign/faq/">자주 묻는 질문</a></li>
+          <li><a href="/beautysarang-demo/campaign/notice/">공지사항</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="footer-nav__title">회<span class="nobr">사·</span><wbr>지원</h2>
+        <ul>
+          <li><a href="/beautysarang-demo/campaign/about/">회사소개</a></li>
+          <li><a href="/beautysarang-demo/campaign/about/#history">연혁</a></li>
+          <li><a href="/beautysarang-demo/campaign/about/#location">오시는 길</a></li>
+          <li><a href="/beautysarang-demo/campaign/support/">고객센터</a></li>
+          <li><a href="/beautysarang-demo/campaign/support/remote/">원격지원</a></li>
+          <li><a href="/beautysarang-demo/campaign/support/contact/">온라인 상담</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="footer-info">
+      <img class="footer-info__logo" src="/beautysarang-demo/campaign/assets/img/logo.svg" alt="뷰티사랑넷" width="150" height="40" loading="lazy">
+      <address>
+        <p><strong><span class="nobr">애니라인㈜</span></strong> · 대표 이태윤 · 사업자등록번호 301-81-56575 · 통신판매업신고 제2008-충북청주-0445호</p>
+        <p><span class="nobr">(28378)</span> 충청북도 청주시 흥덕구 2순환로 1270 라인빌딩</p>
+        <p>고객센터 <a href="tel:1833-3675">1833-3675</a> · 팩스 043-272-0912 · 이메일 <a href="mailto:cs@beauty-sarang.net">cs@beauty-sarang.net</a></p>
+      </address>
+      <ul class="footer-social" aria-label="뷰티사랑넷 채널">
+        <li><a href="https://blog.naver.com/beautysarangnet" rel="noopener" target="_blank">네이버 블로그</a></li>
+        <li><a href="https://www.instagram.com/beauty_sarangnet/" rel="noopener" target="_blank">인스타그램</a></li>
+        <li><a href="https://www.facebook.com/beautysarangnet" rel="noopener" target="_blank">페이스북</a></li>
+        <li><a href="http://pf.kakao.com/_vUExbj" rel="noopener" target="_blank">카카오톡 채널</a></li>
+        <li><a href="https://play.google.com/store/apps/details?id=kr.co.anyline.beautySarang_V3" rel="noopener" target="_blank">Google Play 앱</a></li>
+        <li><a href="https://apps.apple.com/kr/app/id1433304277" rel="noopener" target="_blank">App Store 앱</a></li>
+      </ul>
+      <ul class="footer-legal">
+        <li><a href="/beautysarang-demo/campaign/privacy/"><strong>개인정보처리방침</strong></a></li>
+        <li><a href="/beautysarang-demo/campaign/terms/">서비스 이용약관</a></li>
+      </ul>
+      <p class="footer-copy">© 2001–2026 <span class="nobr">애니라인㈜</span> 뷰티사랑넷. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/beautysarang-demo/campaign/assets/js/main.js" defer></script>
+<script src="/beautysarang-demo/campaign/assets/js/campaign.js" defer></script>
+</body>
+</html>
